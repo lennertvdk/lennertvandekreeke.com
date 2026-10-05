@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "mvp-site", "runtimeExecutable": "python3", "runtimeArgs": ["-m", "http.server", "8123", "--directory", "/Users/lenne/Documents/Github/lennertvandekreeke-com-MVP"], "port": 8123, "autoPort": false }
+  ]
+}
