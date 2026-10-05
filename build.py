@@ -10,10 +10,7 @@ from pathlib import Path
 SITE = "https://lennertvandekreeke.com"
 LINKEDIN = "https://www.linkedin.com/in/lennert-van-de-kreeke/"
 FORMSPREE = "https://formspree.io/f/mjykqqog"
-DESCRIPTION = (
-    "Medizinstudent im Praktischen Jahr an der Charité Berlin, "
-    "mit Schwerpunkt Psychiatrie und Psychotherapie."
-)
+DESCRIPTION = "Medizin · Psychiatrie · Forschung. Berlin."
 
 HEAD = """<!doctype html>
 <html lang="de">
@@ -58,8 +55,7 @@ HOME_BODY = f"""  <main class="page">
       <img class="portrait" src="/img/portrait-500.jpg" srcset="/img/portrait-500.jpg 500w, /img/portrait.jpg 1000w" sizes="15rem" alt="Porträt von Lennert van de Kreeke" width="500" height="625">
       <div>
         <h1>Lennert van de Kreeke</h1>
-        <p class="lede">Medizinstudent im Praktischen Jahr an der Charité&nbsp;– Universitätsmedizin Berlin, mit Schwerpunkt Psychiatrie und Psychotherapie.</p>
-        <p class="lede">Promotion an der Psychiatrischen Universitätsklinik Zürich. Approbation voraussichtlich im Sommer&nbsp;2027.</p>
+        <p class="lede">Medizin &middot; Psychiatrie &middot; Forschung</p>
         <ul class="links">
           <li><a class="button" href="{LINKEDIN}" rel="me">{LINKEDIN_ICON} LinkedIn</a></li>
           <li><a class="button ghost" href="#kontakt">Kontakt</a></li>
