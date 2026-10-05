@@ -5,6 +5,7 @@ link to a page that no longer exists still lands on the business card, while
 GitHub Pages answers with a 404 and Google drops the old URL.
 """
 
+import hashlib
 from pathlib import Path
 
 SITE = "https://lennertvandekreeke.com"
@@ -21,7 +22,7 @@ HEAD = """<!doctype html>
   <meta name="description" content="{description}">
 {extra_head}  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/fonts/ibm-plex-sans-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/styles.css?v={css_v}">
 </head>
 <body>
 """
@@ -99,13 +100,20 @@ PRIVACY_BODY = """  <main class="page text">
   </main>
 """
 
-SCRIPT = '  <script src="/contact.js"></script>\n'
+SCRIPT = '  <script src="/contact.js?v={js_v}"></script>\n'
+
+
+def version(path):
+    """Short content hash, so browsers fetch a file again whenever it changes."""
+    return hashlib.sha256((Path(__file__).parent / path).read_bytes()).hexdigest()[:8]
 
 
 def page(title, description, extra_head, body, script=""):
     return (
-        HEAD.format(title=title, description=description, extra_head=extra_head)
-        + body + FOOTER + script + "</body>\n</html>\n"
+        HEAD.format(title=title, description=description, extra_head=extra_head,
+                    css_v=version("styles.css"))
+        + body + FOOTER + script.format(js_v=version("contact.js"))
+        + "</body>\n</html>\n"
     )
 
 
