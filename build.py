@@ -37,7 +37,7 @@ HOME_META = f"""  <link rel="canonical" href="{SITE}/">
   <meta property="og:description" content="{DESCRIPTION}">
   <meta property="og:url" content="{SITE}/">
   <meta property="og:locale" content="de_DE">
-  <meta property="og:image" content="{SITE}/img/portrait.jpg">
+  <meta property="og:image" content="{SITE}/img/portrait-800.jpg">
   <meta property="og:image:alt" content="Porträt von Lennert van de Kreeke">
   <meta name="twitter:card" content="summary">
 """
@@ -52,20 +52,18 @@ LINKEDIN_ICON = (
 
 HOME_BODY = f"""  <main class="page">
     <section class="intro">
-      <img class="portrait" src="/img/portrait-500.jpg" srcset="/img/portrait-500.jpg 500w, /img/portrait.jpg 1000w" sizes="15rem" alt="Porträt von Lennert van de Kreeke" width="500" height="625">
+      <img class="portrait" src="/img/portrait-800.jpg" srcset="/img/portrait-800.jpg 800w, /img/portrait-1600.jpg 1600w" sizes="(max-width: 40rem) 15rem, 18rem" alt="Porträt von Lennert van de Kreeke" width="800" height="1000">
       <div>
         <h1>Lennert van de Kreeke</h1>
         <p class="lede">Medizin &middot; Psychiatrie &middot; Forschung</p>
         <ul class="links">
           <li><a class="button" href="{LINKEDIN}" rel="me">{LINKEDIN_ICON} LinkedIn</a></li>
-          <li><a class="button ghost" href="#kontakt">Kontakt</a></li>
         </ul>
       </div>
     </section>
 
     <section class="contact" id="kontakt" aria-labelledby="kontakt-title">
-      <h2 id="kontakt-title">Kontakt</h2>
-      <p>Ihre Nachricht geht direkt an mich. Ich melde mich in der Regel innerhalb weniger Tage.</p>
+      <h2 id="kontakt-title">Kontaktformular</h2>
       <form class="contact-form" action="{FORMSPREE}" method="POST" data-sending="Wird gesendet…" data-success="Vielen Dank, Ihre Nachricht ist angekommen." data-error="Das hat leider nicht geklappt. Bitte versuchen Sie es gleich noch einmal.">
         <input type="hidden" name="_subject" value="Neue Nachricht über lennertvandekreeke.com">
         <label class="hp" aria-hidden="true">Leer lassen <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>

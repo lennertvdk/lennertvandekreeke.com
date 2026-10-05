@@ -73,14 +73,14 @@ a { color: var(--accent); text-underline-offset: 0.2em; }
 a:hover { text-decoration-thickness: 2px; }
 
 .page {
-  max-width: 52rem;
+  max-width: 46rem;
   margin: 0 auto;
-  padding: clamp(3rem, 10vh, 7rem) 1rem 3rem;
+  padding: clamp(3rem, 12vh, 8rem) 1rem 3rem;
 }
 
 .intro {
   display: grid;
-  grid-template-columns: 15rem 1fr;
+  grid-template-columns: 18rem 1fr;
   gap: clamp(2rem, 5vw, 3.5rem);
   align-items: center;
 }
@@ -97,6 +97,7 @@ a:hover { text-decoration-thickness: 2px; }
 h1 {
   font: 400 clamp(2.25rem, 5vw, 3.25rem)/1.1 var(--serif);
   letter-spacing: -0.01em;
+  text-wrap: balance;
   margin: 0 0 1rem;
 }
 
@@ -126,18 +127,15 @@ h1 {
   cursor: pointer;
 }
 .button:hover { filter: brightness(1.12); }
-.button.ghost { background: transparent; color: var(--accent); }
 .button svg { width: 1em; height: 1em; }
 
 .contact {
   margin-top: clamp(3.5rem, 9vh, 5.5rem);
   padding-top: 2.5rem;
   border-top: 1px solid var(--line);
-  max-width: 34rem;
 }
 
-h2 { font: 400 1.75rem/1.2 var(--serif); margin: 0 0 0.5rem; }
-.contact > p { margin: 0 0 1.5rem; color: var(--muted); }
+h2 { font: 400 1.75rem/1.2 var(--serif); margin: 0 0 1.5rem; }
 
 .contact-form { display: grid; gap: 1rem; }
 .contact-form label { display: grid; gap: 0.3rem; font-size: 0.9375rem; font-weight: 500; }
@@ -160,7 +158,7 @@ h2 { font: 400 1.75rem/1.2 var(--serif); margin: 0 0 0.5rem; }
 .hp { position: absolute; left: -9999px; }
 
 footer {
-  max-width: 52rem;
+  max-width: 46rem;
   margin: 0 auto;
   padding: 2rem 1rem 3rem;
   color: var(--muted);
@@ -171,10 +169,10 @@ footer a { color: inherit; }
 /* Text pages (Datenschutz) */
 .text { max-width: 40rem; }
 .text h1 { font-size: clamp(2rem, 4vw, 2.5rem); }
-.text h2 { font-size: 1.25rem; margin-top: 2rem; }
+.text h2 { font-size: 1.25rem; margin: 2rem 0 0.5rem; }
 .back { display: inline-block; margin-bottom: 2rem; font-size: 0.9375rem; }
 
 @media (max-width: 40rem) {
   .intro { grid-template-columns: 1fr; gap: 1.75rem; }
-  .portrait { max-width: 13rem; }
+  .portrait { max-width: 15rem; }
 }
